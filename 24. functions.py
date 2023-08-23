@@ -1,4 +1,4 @@
-########## Functions :: given input provide output through conditioned procrdd
+########## Functions :: given input provide output through conditioned process
 
 ### Abstraction :: ghost
 ### Decomposition :: various functions works togather for one app
