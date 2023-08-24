@@ -77,7 +77,57 @@ print(my_loop(b))
 
 ####################### Confusion ::
 
+itr = [1,2,3,4]
+iter_obj = iter(itr)
 
+print(id(iter_obj))  # 4330831488
+
+iter_obj2 = iter(iter_obj)
+print(id(iter_obj2)) # 4330831488
+
+# iter_obj and iter_obj2 is same
+
+################## My Range :: work as range function
+
+class my_range: # Iterable Class
+    def __init__(self, start, end):
+        self.start = start
+        self.end = end
+
+
+    def __iter__(self):
+        return my_range_iterator(self)
+    
+    
+
+class my_range_iterator: # Iterator Class
+    def __init__(self, itrble_obj):
+        self.itrble = itrble_obj
+
+    def __iter__(self):
+        return self
+
+    def __next__(self):
+        if self.itrble.start >= self.itrble.end:
+            raise StopIteration
+        
+        current = self.itrble.start
+        self.itrble.start += 1
+        return current
+
+
+for i in my_range(1,10):
+    print(i) 
+## output :: as like range()
+# 1
+# 2
+# 3
+# 4
+# 5
+# 6
+# 7
+# 8
+# 9
 
 ################ Application ::
 
