@@ -37,13 +37,9 @@ def median(a, b):
 
 
 
-nums1_1 = [1, 3]
-nums2_1 = [2]
-result_1 = median(nums1_1, nums2_1)
-print(result_1) 
+
+print(median([1, 3], [2])) 
 
 # Example 2
-nums1_2 = [1, 2]
-nums2_2 = [3, 4]
-result_2 = median(nums1_2, nums2_2)
-print(result_2)
+
+print(median([1, 2], [3, 4]))
